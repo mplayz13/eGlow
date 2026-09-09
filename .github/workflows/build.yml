@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI with Gradle
 
 on:
   workflow_dispatch:
@@ -15,13 +15,17 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
         
-    - name: Build with Maven
-      run: mvn clean package --file pom.xml
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+
+    - name: Build with Gradle
+      run: ./gradlew shadowJar || ./gradlew build
 
     - name: Upload Jar Artifact
       uses: actions/upload-artifact@v4
       with:
         name: eGlow-Plugin
-        path: target/*.jar
+        path: |
+          build/libs/*.jar
+          target/*.jar
