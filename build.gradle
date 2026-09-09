@@ -14,18 +14,15 @@ compileJava.options.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
-    //Spigot
-    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
-    //TAB, YamlAssist, Vault
-    maven { url = 'https://jitpack.io' }
-    //Citizens
-    maven { url = 'https://repo.citizensnpcs.co/' }
-    //PlaceholderAPI
-    maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
-    //iDisguise
-    maven { url = 'http://repo.robingrether.de/'
-        allowInsecureProtocol = true
-    }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://spigotmc.org' }
+    maven { url 'https://papermc.io' }
+    maven { url 'https://extendedclip.com' }
+    maven { url 'https://citizensnpcs.co' }
+    maven { url 'https://viaversion.com' }
+    maven { url 'https://md-5.net' }
+}
+
     //LibsDisguises
     maven { url = 'https://repo.md-5.net/content/groups/public/' }
     //ViaVersion
@@ -41,7 +38,6 @@ dependencies {
     compileOnly ('net.luckperms:api:5.4')
     compileOnly ('net.citizensnpcs:citizens-main:2.0.27-SNAPSHOT')
     compileOnly ('me.clip:placeholderapi:2.10.9')
-    compileOnly ('de.robingrether.idisguise:idisguise-core:5.8.2')
     compileOnly ('LibsDisguises:LibsDisguises:10.0.28')
     compileOnly ('us.myles:viaversion:3.2.1')
     compileOnly ('com.github.MilkBowl:VaultAPI:1.7')
